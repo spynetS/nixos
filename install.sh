@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 ln -s $(pwd)/home-manager $HOME/.config/home-manager
 
 FILE_TO_BACKUP="/etc/nixos/configuration.nix"  # Change this to the file you want to back up
@@ -12,15 +12,15 @@ if [ -e "$FILE_TO_BACKUP" ]; then
 
     if [[ "$choice" == "y" || "$choice" == "Y" ]]; then
         # Create a backup of the file
-        cp "$FILE_TO_BACKUP" "$BACKUP_LOCATION"
+        sudo cp "$FILE_TO_BACKUP" "$BACKUP_LOCATION"
         echo "Backup created at '$BACKUP_LOCATION'."
 
         # Remove the original file
-        rm "$FILE_TO_BACKUP"
+        sudo rm "$FILE_TO_BACKUP"
         echo "Removed '$FILE_TO_BACKUP'."
 
         # Create the symbolic link
-        ln -s "$SYMLINK_TARGET" "$FILE_TO_BACKUP"
+        sudo ln -s "$SYMLINK_TARGET" "$FILE_TO_BACKUP"
         echo "Created symlink '$FILE_TO_BACKUP' -> '$SYMLINK_TARGET'."
     else
         echo "Operation canceled. No changes made."
