@@ -20,7 +20,7 @@ if [ -e "$FILE_TO_BACKUP" ]; then
         echo "Removed '$FILE_TO_BACKUP'."
 
         # Create the symbolic link
-        sudo ln -s "$SYMLINK_TARGET" "$FILE_TO_BACKUP"
+        sudo ln "$SYMLINK_TARGET" "$FILE_TO_BACKUP"
         echo "Created symlink '$FILE_TO_BACKUP' -> '$SYMLINK_TARGET'."
     else
         echo "Operation canceled. No changes made."

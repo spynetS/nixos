@@ -1,0 +1,2 @@
+ln -s $(pwd)/home-manager $HOME/.config/home-manager
+sudo ln -s $(pwd)/configuration.nix /etx/nixos

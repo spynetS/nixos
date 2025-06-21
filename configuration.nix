@@ -101,7 +101,10 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-
+    # fix dolphin mime
+    xdg-utils
+    shared-mime-info
+    ###
     wget
     emacs
     tldr
@@ -112,6 +115,7 @@
     neovim
     fastfetch
     alacritty
+
     # niri
     mako
     waybar
@@ -122,6 +126,7 @@
     kdePackages.polkit-kde-agent-1
     xwayland
     xwayland-satellite
+    ###
     
     pavucontrol
     mpv
