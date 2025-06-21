@@ -51,9 +51,9 @@
   };
   
   home.file = {
-    ".config/niri/config.kdl".source = "/home/spy/.config/home-manager/niri/config.kdl";
-    ".config/waybar/config.jsonc".source = "/home/spy/.config/home-manager/waybar/config.jsonc";
-    ".config/waybar/style.css".source = "/home/spy/.config/home-manager/waybar/style.css";
+    ".config/niri/config.kdl".source = "/home/spy/.config/home-manager/dotfiles/niri/config.kdl";
+    ".config/waybar/config.jsonc".source = "/home/spy/.config/home-manager/dotfiles/waybar/config.jsonc";
+    ".config/waybar/style.css".source = "/home/spy/.config/home-manager/dotfiles/waybar/style.css";
   };
 
   home.sessionVariables = {
