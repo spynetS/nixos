@@ -48,7 +48,7 @@
     enable = true;
   };
   
-  services.libinput.touchpad.naturalScrolling = true;
+ # services.libinput.touchpad.naturalScrolling = true;
   
   #  services.xserver.displayManager.lightdm.enable = true;
   # services.xserver.displayManager.defaultSession = "your-desktop-session"; # e.g., "i3", "plasma", "gnome"
@@ -56,7 +56,7 @@
   
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+#  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -115,8 +115,10 @@
     neovim
     fastfetch
     alacritty
-
-    # niri
+    papirus-icon-theme
+    htop
+    btop
+    # niri dep
     mako
     waybar
     gnome-keyring
@@ -133,6 +135,9 @@
     feh 
   ];
 
+  programs.zsh.enable = true;
+  users.users.spy.shell = pkgs.zsh;
+  
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

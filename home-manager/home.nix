@@ -5,6 +5,8 @@
 
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
+
+  
   home.packages = with pkgs; [
     pkgs.oh-my-zsh
     (pkgs.writeShellScriptBin "random-wallpaper" ''
@@ -13,7 +15,7 @@
     ${pkgs.swaybg}/bin/swaybg -i "$RANDOM_WALLPAPER" -m fill
 '')
   ];
-  
+
   programs.zsh = {
     enable = true;
     syntaxHighlighting.enable = true;
@@ -22,13 +24,16 @@
       nixconf="export EDITOR='emacs -nw'; sudoedit /etc/nixos/configuration.nix";
       update = "sudo nixos-rebuild switch";
     };
+    initExtra = ''
+      fastfetch
+    '';
     oh-my-zsh = {
       enable = true;
       plugins = ["git"];
       theme = "agnoster";
     };
   };
-
+  
   programs.git = {
     enable = true;
     userName = "spynets";
