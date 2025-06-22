@@ -5,8 +5,6 @@
 
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
-
-  
   home.packages = with pkgs; [
     pkgs.oh-my-zsh
     (pkgs.writeShellScriptBin "random-wallpaper" ''
@@ -26,6 +24,7 @@
     };
     initExtra = ''
       fastfetch
+
     '';
     oh-my-zsh = {
       enable = true;
@@ -54,11 +53,17 @@
     "application/pdf" = ["firefox"];
     "video/*" = ["mpv.desktop"];
   };
+
+  programs.emacs = {
+    enable = true;
+    package = pkgs.emacs30;  # or your preferred version
+  };
   
   home.file = {
     ".config/niri/config.kdl".source = "/home/spy/.config/home-manager/dotfiles/niri/config.kdl";
     ".config/waybar/config.jsonc".source = "/home/spy/.config/home-manager/dotfiles/waybar/config.jsonc";
     ".config/waybar/style.css".source = "/home/spy/.config/home-manager/dotfiles/waybar/style.css";
+  ".doom.d".source = ./dotfiles/doom;
   };
 
   home.sessionVariables = {

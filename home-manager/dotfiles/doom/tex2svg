@@ -1,0 +1,1 @@
+node --no-warnings /home/spy/.config/doom/node_modules/mathjax-node-cli/bin/tex2svg $1 $2 $3 $4
