@@ -177,3 +177,5 @@
        :config
        ;;literate
        (default +bindings +smartparens))
+
+(setq custom-file (expand-file-name "custom.el" (getenv "XDG_CONFIG_HOME")))

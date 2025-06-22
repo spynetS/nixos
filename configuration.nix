@@ -106,7 +106,6 @@
     shared-mime-info
     ###
     wget
-    emacs
     tldr
     git
     discord
@@ -118,6 +117,7 @@
     papirus-icon-theme
     htop
     btop
+    tree
     # niri dep
     mako
     waybar
@@ -132,7 +132,13 @@
     
     pavucontrol
     mpv
-    feh 
+    feh
+    thunderbird
+
+    #emacs
+    ripgrep
+    fd
+    (emacsPackagesFor emacs30).emacs 
   ];
 
   programs.zsh.enable = true;

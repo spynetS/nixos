@@ -4,6 +4,10 @@
 
 ;; (require 'sublimity-attractive)
 
+(when (file-exists-p custom-file)
+  (load custom-file))
+
+
 (setq lsp-java-vmargs '("-XX:+UseParallelGC" "-XX:GCTimeRatio=4" "-XX:AdaptiveSizePolicyWeight=90" "-Dsun.zip.disableMemoryMapping=true" "-Xmx2G" "-Xms100m"))
 
 (after! lsp-java
@@ -153,7 +157,7 @@
 	 )
 ))
 
-(setq org-format-latex-options '(:scale 2.25))
+;;(setq org-format-latex-options '(:scale 2.25))
 
 (defvar my-maximize-buffer-flag nil
   "Flag to track whether the buffer is maximized or not.")

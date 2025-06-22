@@ -540,6 +540,7 @@ Sets the opacity
 ;;(package! good-scroll)
 ;;(package! good-scroll)
 (package! picpocket)
+(package! nix-mode)
 #+end_src
 ** agenda packages
 #+begin_src elisp :tangle "packages.el"

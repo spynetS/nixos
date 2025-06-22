@@ -41,6 +41,7 @@
 ;;(package! good-scroll)
 ;;(package! good-scroll)
 (package! picpocket)
+(package! nix-mode)
 
 (package! org-modern)
 (package! olivetti)
