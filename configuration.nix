@@ -47,16 +47,12 @@
   services.xserver = {
     enable = true;
   };
-  
- # services.libinput.touchpad.naturalScrolling = true;
-  
-  #  services.xserver.displayManager.lightdm.enable = true;
-  # services.xserver.displayManager.defaultSession = "your-desktop-session"; # e.g., "i3", "plasma", "gnome"
+
+  # services.libinput.touchpad.naturalScrolling = true;
 
   
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-#  services.desktopManager.plasma6.enable = true;
+
+  services.displayManager.ly.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -109,7 +105,6 @@
     tldr
     git
     discord
-    python314
     iosevka
     neovim
     fastfetch
@@ -134,6 +129,14 @@
     mpv
     feh
     thunderbird
+    kdePackages.kdenlive
+    xfce.thunar
+
+    # dev
+    python314
+    nodejs_24
+    jdk17
+
 
     #emacs
     ripgrep
@@ -143,7 +146,19 @@
 
   programs.zsh.enable = true;
   users.users.spy.shell = pkgs.zsh;
-  
+
+
+   # Install fonts
+  fonts.packages = with pkgs; [
+    dejavu_fonts
+    liberation_ttf
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-emoji
+    font-awesome
+  ];
+
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

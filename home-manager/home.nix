@@ -12,7 +12,7 @@
     RANDOM_WALLPAPER=$(find "$WALLPAPER_DIR" -type f | shuf -n 1)
     ${pkgs.swaybg}/bin/swaybg -i "$RANDOM_WALLPAPER" -m fill
 '')
-    (pkgs.writeShellScriptBin "start-random-wallpaper" ''${pkgs.swww}/bin/swww init; sleep 1; while true; do ${pkgs.swww}/bin/swww img /home/spy/Pictures/Wallpapers/$(ls /home/spy/Pictures/Wallpapers | shuf -n 1) --transition-fps 30 --transition-type=random --transition-bezier=0,0.84,1,1; sleep 10; done'')
+    (pkgs.writeShellScriptBin "start-random-wallpaper" ''${pkgs.swww}/bin/swww-daemon; sleep 1; while true; do ${pkgs.swww}/bin/swww img /home/spy/Pictures/Wallpapers/$(ls /home/spy/Pictures/Wallpapers | shuf -n 1) --transition-fps 30 --transition-type=random --transition-bezier=0,0.84,1,1; sleep 600; done'')
   ];
 
   programs.zsh = {
